@@ -14,6 +14,10 @@ import java.util.Objects;
 
 public class Calculator extends Application {
 
+    double valueOne;
+    double valueTwo;
+
+    int operation;
     TextField textField;
 
     @Override
@@ -37,34 +41,34 @@ public class Calculator extends Application {
         gridPane.add(textField, 0, 0, 4, 1);
 
         Button numberZero = new Button("0");
-        numberZero.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberZero.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberOne= new Button("1");
-        numberOne.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberOne.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberTwo = new Button("2");
-        numberTwo.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberTwo.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberThree= new Button("3");
-        numberThree.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberThree.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberFour = new Button("4");
-        numberFour.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberFour.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberFive = new Button("5");
-        numberFive.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberFive.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberSix = new Button("6");
-        numberSix.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberSix.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberSeven = new Button("7");
-        numberSeven.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberSeven.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberEight = new Button("8");
-        numberEight.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberEight.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button numberNine = new Button("9");
-        numberNine.setStyle("-fx-background-color:#34ebde; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+        numberNine.setStyle("-fx-background-color:#8f6c03; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
         Button buttonOperationAddition = new Button("+");
         buttonOperationAddition.setStyle("-fx-background-color:#0f1875; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
@@ -84,9 +88,22 @@ public class Calculator extends Application {
         Button buttonOperationClear = new Button("C");
         buttonOperationClear.setStyle("-fx-background-color:#0f1875; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 
+        Button buttonOperationBackspace = new Button("⌫");
+        buttonOperationBackspace.setStyle("-fx-background-color:#0f1875; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+
+        Button buttonOperationChangeSign = new Button("±");
+        buttonOperationChangeSign.setStyle("-fx-background-color:#0f1875; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+
+        Button buttonOperationPoint = new Button(".");
+        buttonOperationPoint.setStyle("-fx-background-color:#0f1875; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
+
+        Button buttonToFulfill = new Button("");
+        buttonToFulfill.setStyle("-fx-background-color:#0f1875; -fx-text-fill: white; -fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-background-radius: 10");
 //Row 2
+        gridPane.add(buttonToFulfill,0 ,1);
         gridPane.add(buttonOperationClear, 2, 1);
         gridPane.add(buttonOperationDivision, 3, 1);
+        gridPane.add(buttonOperationBackspace,1 , 1);
 
 //Row 3
         gridPane.add(numberSeven, 0, 2);
@@ -107,7 +124,9 @@ public class Calculator extends Application {
         gridPane.add(buttonOperationSubtraction, 3, 4);
 
 //Row 6
+        gridPane.add(buttonOperationChangeSign, 0, 5);
         gridPane.add(numberZero, 1, 5);
+        gridPane.add(buttonOperationPoint, 2 ,5);
         gridPane.add(buttonOperationEquals, 3, 5);
 
 // Events
@@ -122,7 +141,21 @@ public class Calculator extends Application {
         numberEight.setOnAction(event -> handleButtonPressNumber("8"));
         numberNine.setOnAction(event -> handleButtonPressNumber("9"));
 
+        buttonOperationAddition.setOnAction(event -> handleButtonPressOperationAddition());
+
+        buttonOperationSubtraction.setOnAction(event -> handleButtonPressOperationSubtraction());
+
+        buttonOperationMultiplication.setOnAction(event -> handleButtonPressOperationMultiplication());
+
+        buttonOperationDivision.setOnAction(event -> handleButtonPressOperationDivision());
+
         buttonOperationClear.setOnAction(event -> handleButtonPressClear());
+
+        buttonOperationEquals.setOnAction(actionEvent -> handleButtonPressEquals());
+
+        buttonOperationPoint.setOnAction(event -> handleButtonPressPoint());
+
+        buttonOperationBackspace.setOnAction(event -> handleButtonPressBackspace());
 
         Scene scene = new Scene(gridPane);
         stage.setScene(scene);
@@ -130,12 +163,104 @@ public class Calculator extends Application {
         stage.show();
     }
 
+    private void handleButtonPressBackspace(){
+        String screen = textField.getText();
+        char[] screenArray = screen.toCharArray();
+        String result = "";
+
+        for(int i = 0; i < screenArray.length - 1; i++){
+            result += String.valueOf(screenArray[i]);
+        }
+
+        textField.setText(result);
+    }
+
+    private void handleButtonPressPoint(){
+        String screen = textField.getText();
+
+        if(!screen.contains(".")){
+            textField.setText(textField.getText()+ ".");
+        }
+    }
+
+    private void handleButtonPressEquals(){
+        double result;
+        switch (operation){
+            case 1:{
+                valueTwo = Double.parseDouble(textField.getText());
+                result = valueOne + valueTwo;
+                textField.setText(String.valueOf(result));
+                break;
+            }
+            case 2:{
+                valueTwo = Double.parseDouble(textField.getText());
+                result = valueOne - valueTwo;
+                textField.setText(String.valueOf(result));
+                break;
+            }
+            case 3:{
+                valueTwo = Double.parseDouble(textField.getText());
+                result = valueOne * valueTwo;
+                textField.setText(String.valueOf(result));
+                break;
+            }
+            case 4:{
+                valueTwo = Double.parseDouble(textField.getText());
+                result = valueOne / valueTwo;
+                textField.setText(String.valueOf(result));
+                break;
+            }
+            default:{
+                break;
+            }
+        }
+    }
+
     private void handleButtonPressNumber(String buttonValue) {
-        textField.setText(textField.getText() + buttonValue);
+        if (Objects.equals(textField.getText(),"0") && !Objects.equals(buttonValue, "0")){
+            textField.setText(buttonValue);
+        } else if (!Objects.equals(textField.getText(),"0")){
+            textField.setText(textField.getText() + buttonValue);
+        }
+    }
+
+    private void handleButtonPressOperationAddition() {
+        if(valueOne == 0) {
+            valueOne = Double.parseDouble(textField.getText());
+            operation = 1;
+            textField.setText("0");
+        }
+    }
+
+    private void handleButtonPressOperationSubtraction() {
+        if(valueOne == 0) {
+            valueOne = Double.parseDouble(textField.getText());
+            operation = 2;
+            textField.setText("0");
+        }
+    }
+
+    private void handleButtonPressOperationMultiplication() {
+        if(valueOne == 0) {
+            valueOne = Double.parseDouble(textField.getText());
+            operation = 3;
+            textField.setText("0");
+        }
+    }
+
+    private void handleButtonPressOperationDivision() {
+        if(valueOne == 0) {
+            valueOne = Double.parseDouble(textField.getText());
+            operation = 4;
+            textField.setText("0");
+        }
     }
 
     private void handleButtonPressClear() {
         textField.setText("0");
+        valueOne = 0;
+        valueTwo = 0;
+        operation = 0;
     }
 
     public static void main(String[] args) {
